@@ -242,7 +242,15 @@ def main():
     # Page Setup
     st.set_page_config(page_title="DocumentGPT")
     st.title("DocumentGPT")
-    st.subheader("You can upload multiple files and ask questions about them.")
+    st.subheader("Transform Your Documents into Conversational Partners!")
+
+    st.write("Key Functionalities:")
+    st.write("📤 Upload PDF, DOCX, ZIP")
+    st.write("📄 Extract Text from Documents")
+    st.write("💬 Interactive Chat Interface")
+    st.write("🤖 AI-Powered Document Analysis")
+    st.write("🔒 Secure and Efficient Storage")
+
 
     # Setup session states
     if "conversation" not in st.session_state:
@@ -260,7 +268,7 @@ def main():
     with st.sidebar:
         st.header("Upload File")
 
-        api = st.text_input("Enter your API Key", type="password", value=openapi_key)
+        api = st.text_input("Enter your API Key", type="password")
         validate = st.button("Validate")
 
         if validate:
