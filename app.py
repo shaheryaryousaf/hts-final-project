@@ -219,7 +219,7 @@ def get_qa_chain(vectorstore, num_chunks):
 
         # Create a RetrievalQA instance for question answering.
         qa = RetrievalQA.from_chain_type(
-            llm=ChatOpenAI(model="gpt-3.5-turbo"),  # Language model
+            llm=ChatOpenAI(model="gpt-3.5-turbo-16k"),  # Language model
             chain_type="stuff",                     # Chain type
             retriever=vectorstore.as_retriever(
                 search_type="similarity",
@@ -287,6 +287,8 @@ def main():
             embedding = st.selectbox("Select Embedding Model", options=EMBEDDING_MODEL)
             splitting_type = st.selectbox("Select Splitting Type", options=TEXT_SPLITTING)
             process = st.button("Process")
+
+            
 
             # Process Initiate
             if process:
