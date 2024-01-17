@@ -13,22 +13,18 @@ from langchain.prompts import PromptTemplate
 from langchain.docstore.document import Document
 from langchain.chains import RetrievalQA
 from langchain.text_splitter import CharacterTextSplitter, RecursiveCharacterTextSplitter
-from langchain.retrievers import ContextualCompressionRetriever
-from langchain.retrievers.document_compressors import LLMChainExtractor
+from langchain_openai import ChatOpenAI
 
 # Langchain community imports for advanced functionalities
 from langchain_community.document_loaders import Docx2txtLoader, PyPDFLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Qdrant, Pinecone
+from langchain_community.vectorstores import Qdrant
 from langchain_community.chat_models import ChatOpenAI
 
 # Other imports (Consider removing if not used in the application)
 import pinecone
-import torch
-from transformers import AutoTokenizer, AutoModel
 
 # Retrieving API keys and configurations from Streamlit's secret management
-openapi_key = st.secrets["OPENAI_API_KEY"]  # API key for OpenAI
 qdrant_url = st.secrets["QDRANT_URL"]       # URL for Qdrant vector DB
 qdrant_api_key = st.secrets["QDRANT_API_KEY"]  # API key for Qdrant
 pinecone_api_key = st.secrets["PINECONE_API_KEY"]  # API key for Pinecone vector database
