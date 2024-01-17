@@ -219,7 +219,7 @@ def get_qa_chain(vectorstore, num_chunks):
 
         # Create a RetrievalQA instance for question answering.
         qa = RetrievalQA.from_chain_type(
-            llm=ChatOpenAI(model="gpt-3.5-turbo-16k"),  # Language model
+            llm=ChatOpenAI(model="gpt-3.5-turbo-16k", api_key=st.session_state.api_key),  # Language model
             chain_type="stuff",                     # Chain type
             retriever=vectorstore.as_retriever(
                 search_type="similarity",
