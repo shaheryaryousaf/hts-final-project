@@ -19,7 +19,7 @@ from langchain_openai import ChatOpenAI
 from langchain_community.document_loaders import Docx2txtLoader, PyPDFLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Qdrant
-from langchain_community.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 
 # Other imports (Consider removing if not used in the application)
 import pinecone
