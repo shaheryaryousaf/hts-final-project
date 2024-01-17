@@ -142,15 +142,15 @@ def createChunksByTextSplitter(text, file_name, text_splitter_type="Character"):
     if text_splitter_type == "Character":
         content = CharacterTextSplitter(
             separator="\n",
-            chunk_size=500,
-            chunk_overlap=70,
+            chunk_size=200,
+            chunk_overlap=20,
             length_function=len
         )
     elif text_splitter_type == "Recursive":
         content = RecursiveCharacterTextSplitter(
             is_separator_regex=False,
-            chunk_size=500,
-            chunk_overlap=70,
+            chunk_size=200,
+            chunk_overlap=20,
             length_function=len
         )
     else:
