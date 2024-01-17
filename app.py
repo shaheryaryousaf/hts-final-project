@@ -19,7 +19,6 @@ from langchain_openai import ChatOpenAI
 from langchain_community.document_loaders import Docx2txtLoader, PyPDFLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Qdrant
-from langchain_openai import ChatOpenAI
 
 # Other imports (Consider removing if not used in the application)
 import pinecone
@@ -142,15 +141,15 @@ def createChunksByTextSplitter(text, file_name, text_splitter_type="Character"):
     if text_splitter_type == "Character":
         content = CharacterTextSplitter(
             separator="\n",
-            chunk_size=200,
-            chunk_overlap=20,
+            chunk_size=500,
+            chunk_overlap=70,
             length_function=len
         )
     elif text_splitter_type == "Recursive":
         content = RecursiveCharacterTextSplitter(
             is_separator_regex=False,
-            chunk_size=200,
-            chunk_overlap=20,
+            chunk_size=500,
+            chunk_overlap=70,
             length_function=len
         )
     else:
