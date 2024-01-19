@@ -1,7 +1,5 @@
 # **DocumentGPT**
 
-**Demo URL:** [https://hts-final-project-documentgpt.streamlit.app](https://hts-final-project-documentgpt.streamlit.app)
-
 ## **Introduction**
 DocumentGPT is an innovative chatbot application for documents, allowing users to upload various file types (PDF, DOCX, ZIP) and interact with them through a chat interface. This README provides instructions on setting up and running DocumentGPT locally.
 
